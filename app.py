@@ -1,5 +1,6 @@
+from urllib import request
 from flask import Flask
-from flask import jsonify
+from flask import jsonify, request
 app = Flask(__name__)
 
 def change(amount):
@@ -29,7 +30,7 @@ def change(amount):
 def hello():
     """Return a friendly HTTP greeting."""
     print("I am inside hello world")
-    return 'Hello World! I can make change at route: /change'
+    return 'Hello World! I can make change at route: /change or make a JSON payload to route /post_json'
 
 @app.route('/change/<dollar>/<cents>')
 def changeroute(dollar, cents):
@@ -42,6 +43,12 @@ def changeroute(dollar, cents):
 def changetimes100(change):
     print(f"This is {change} X 100")
     return str(float(change) * 100)
+
+@app.route('/post_json', methods=['POST'])
+def endpoint():
+    print("Make change from JSON payload")
+    result = change(float(request.json['amount']))
+    return jsonify(result)
 
 
 if __name__ == '__main__':
