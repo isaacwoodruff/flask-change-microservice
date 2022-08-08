@@ -38,6 +38,11 @@ def changeroute(dollar, cents):
     result = change(float(amount))
     return jsonify(result)
 
+@app.route('/changex100/<change>')
+def changetimes100(change):
+    print(f"This is {change} X 100")
+    return str(float(change) * 100)
+
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug=True)
