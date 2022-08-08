@@ -1,4 +1,20 @@
-[![Flask Change Microservice Test](https://github.com/noahgift/flask-change-microservice/actions/workflows/main.yml/badge.svg)](https://github.com/noahgift/flask-change-microservice/actions/workflows/main.yml)
+# Update
+This project was cloned and edited as part of the Duke University Building Cloud Computing Solutions at Scale Specialization. 
+
+I created a route as an endpoint that accepts a JSON payload to make change.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # flask-change-microservice
 Small Flask Microservice that makes change
